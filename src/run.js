@@ -6,9 +6,12 @@ module.exports = function (req) {
   var command = tokens.shift();
   var fileName = tokens.shift();
   var args = tokens;
-  var _req = $pool.hasOwnProperty(fileName) ? new $pool[fileName] : false;
   try {
-    return {data: _req ? _req[command].apply(null, args) : false, id: id++};
+    var _req = new $pool[fileName]();
+    return {
+      data: _req[command].apply(null, args),
+      id: id++
+    };
   } catch (e) {
     if (!(e instanceof TypeError)) {
       throw e;
