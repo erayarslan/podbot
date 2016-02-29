@@ -5,7 +5,18 @@ module.exports = {
       req.f = req.obj[req.body.action];
       next();
     } catch (e) {
-      console.log("[ERROR]" + " /" + req.body.namespace + "/" + req.body.action);
+      console.error("/" + req.body.namespace + "/" + req.body.action + " [" + e.message + "]");
+    }
+  },
+  secure: function (req, res, next) {
+    var auth = $config.auth;
+    var user = res.client.user;
+
+    if (auth.username === user.username &&
+      auth.password === user.password) {
+      next();
+    } else {
+      console.error("Access Denied :^");
     }
   }
 };

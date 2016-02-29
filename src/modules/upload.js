@@ -7,9 +7,7 @@ var Upload = function () {
 Upload.prototype.do = function (id) {
   request({
     url: 'https://api.github.com/gists/' + id,
-    headers: {
-      'User-Agent': 'request'
-    }
+    headers: {'User-Agent': 'request'}
   }, function (err, res, body) {
     var obj = JSON.parse(body);
     if (!obj.hasOwnProperty("message")) {
@@ -25,6 +23,8 @@ Upload.prototype.do = function (id) {
           });
         }
       }
+    } else {
+      console.error(id + " Not Found :/");
     }
   });
 };

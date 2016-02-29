@@ -4,6 +4,8 @@ var routers = require(__dirname + "/routers")($);
 
 module.exports = function (port) {
   require("net").createServer(function (socket) {
+    socket.user = {username: "", password: ""};
+
     socket.on("data", function (data) {
       $.handle($run(data.toString()), null, socket);
     });
