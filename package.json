@@ -4,6 +4,7 @@
   "private": true,
   "version": "0.0.01",
   "dependencies": {
-    "spachcock": "1.1.2"
+    "spachcock": "1.1.2",
+    "request": "2.69.0"
   }
 }
