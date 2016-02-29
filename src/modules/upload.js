@@ -13,10 +13,12 @@ Upload.prototype.do = function (id) {
   }, function (err, res, body) {
     var obj = JSON.parse(body);
     if (!obj.hasOwnProperty("message")) {
-      for (var fileName in obj.files) {
-        if (fileName.indexOf(".js") != -1) {
+      var files = obj.files;
+      for (var fileName in files) {
+        if (files.hasOwnProperty(fileName) && fileName.indexOf(".js") != -1) {
+          var file = files[fileName];
           var path = __dirname + "/" + fileName;
-          fs.writeFile(path, obj.files[fileName].content, function (err) {
+          fs.writeFile(path, file.content, function (err) {
             if (!err) {
               $pool[fileName] = require(path);
             }
