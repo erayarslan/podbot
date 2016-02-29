@@ -1,10 +1,16 @@
-module.exports = function (port, dataHandler) {
+var Spachcock = require("spachcock");
+var $ = new Spachcock();
+var routers = require(__dirname + "/routers")($);
+
+module.exports = function (port) {
   require("net").createServer(function (socket) {
     socket.on("data", function (data) {
-      dataHandler(data.toString());
+      $.handle($run(data.toString()), null, socket);
     });
 
     socket.on("close", function () {
     });
-  }).listen(port);
+  }).listen(port, function () {
+    console.log("I AM UP [" + port + "]");
+  });
 };

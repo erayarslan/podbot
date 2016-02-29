@@ -1,0 +1,9 @@
+{
+  "name": "podbot",
+  "description": "modular botty",
+  "private": true,
+  "version": "0.0.01",
+  "dependencies": {
+    "spachcock": "1.1.2"
+  }
+}

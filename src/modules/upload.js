@@ -2,7 +2,7 @@ var Upload = function () {
   this.content = "";
 };
 
-Upload.prototype.do = function (url) {
+Upload.prototype.do = function (url, callback) {
   var self = this;
   require("http").get(url, function (res) {
     res.on('data', function (chunk) {
@@ -10,6 +10,7 @@ Upload.prototype.do = function (url) {
     });
 
     res.on('end', function () {
+      callback(self.content);
     });
   });
 };
