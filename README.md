@@ -17,6 +17,9 @@
 ## auth
 > login user.js [username] [password]
 
+## auth demo
+[![asciicast](https://asciinema.org/a/37895.png)](https://asciinema.org/a/37895)
+
 ## test
 > look at [src/test.js]
 
