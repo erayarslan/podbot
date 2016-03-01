@@ -13,6 +13,9 @@
 ## module upload
 > do upload.js [public gist id]
 
+## auth
+> login user.js [username] [password]
+
 ## test
 > look at [src/test.js]
 

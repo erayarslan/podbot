@@ -1,6 +1,5 @@
 var Spachcock = require("spachcock");
-var $ = new Spachcock();
-var routers = require(__dirname + "/routers")($);
+var $ = require(__dirname + "/routers")(new Spachcock());
 
 module.exports = function (port, callback) {
   require("net").createServer(function (socket) {
