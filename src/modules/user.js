@@ -6,10 +6,8 @@ User.prototype.exit = function (client) {
 };
 
 User.prototype.login = function (username, password) {
-  return {
-    username: username,
-    password: password
-  }
+  $db("login").push({username: username, password: password, date: new Date()});
+  return {username: username, password: password};
 };
 
 module.exports = User;

