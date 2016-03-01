@@ -5,6 +5,7 @@
   "version": "0.0.01",
   "dependencies": {
     "spachcock": "1.1.2",
-    "request": "2.69.0"
+    "request": "2.69.0",
+    "lowdb": "0.12.5"
   }
 }

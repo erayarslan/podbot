@@ -1,4 +1,5 @@
 global.$test = require(__dirname + "/src/test");
+global.$db = require(__dirname + "/src/db");
 global.$rider = require(__dirname + "/src/rider");
 global.$config = require(__dirname + "/src/config");
 global.$pool = require(__dirname + "/src/load");
