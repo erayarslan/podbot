@@ -1,3 +1,4 @@
+![cog](http://cdn.dota2.com/apps/dota2/images/abilities/rattletrap_power_cogs_md.png)
 # podbot
 > modular botty
 
