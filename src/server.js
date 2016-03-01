@@ -2,7 +2,7 @@ var Spachcock = require("spachcock");
 var $ = new Spachcock();
 var routers = require(__dirname + "/routers")($);
 
-module.exports = function (port) {
+module.exports = function (port, callback) {
   require("net").createServer(function (socket) {
     socket.user = {username: "", password: ""};
 
@@ -14,5 +14,6 @@ module.exports = function (port) {
     });
   }).listen(port, function () {
     console.log("I AM UP [" + port + "]");
+    callback ? callback() : false;
   });
 };

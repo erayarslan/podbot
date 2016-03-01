@@ -13,5 +13,8 @@
 ## module upload
 > do upload.js [public gist id]
 
+## test
+> look at [src/test.js]
+
 ## license
 > imma bot dude, i have no right!
