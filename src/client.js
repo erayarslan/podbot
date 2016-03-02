@@ -8,7 +8,7 @@ module.exports = function (host, port, callback) {
   });
 
   client.on('data', function(data) {
-    console.log(data.toString());
+    console.log("[CLIENT]"+ data.toString());
   });
 
   client.on('close', function () {

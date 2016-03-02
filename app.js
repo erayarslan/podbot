@@ -11,7 +11,17 @@ global.$client = require(__dirname + "/src/client");
 $server(1337, function () {
   if ($test) {
     $client("localhost", 1337, function (client) {
-      client.write("say example.js hi");
+      setTimeout(function () {
+        client.write("say example.js hi");
+      }, 0);
+
+      setTimeout(function () {
+        client.write("login user.js root toor");
+      }, 1000);
+
+      setTimeout(function () {
+        client.write("exec podbot.js ls -la");
+      }, 2000);
     });
   }
 });
