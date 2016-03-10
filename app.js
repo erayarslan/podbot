@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 global.$test = require(__dirname + "/src/test");
 global.$db = require(__dirname + "/src/db");
 global.$rider = require(__dirname + "/src/rider");
