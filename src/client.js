@@ -8,7 +8,10 @@ module.exports = function (host, port, callback) {
   });
 
   client.on('data', function(data) {
-    console.log("[CLIENT]"+ data.toString());
+    var arr = data.toString().split("\n");
+    for (var i in arr) {
+      console.log(arr[i]);
+    }
   });
 
   client.on('close', function () {
