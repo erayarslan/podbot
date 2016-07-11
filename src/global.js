@@ -5,7 +5,7 @@ module.exports = {
       req.f = req.obj[req.body.action];
       next();
     } catch (e) {
-      console.error("/" + req.body.namespace + "/" + req.body.action + " [" + e.message + "]");
+      console.error("Bad Request");
     }
   },
   secure: function (req, res, next) {
